@@ -13,7 +13,10 @@ The app has been scaffolded with the CRA (create-react-app) for speed and abilit
   - Checks set up ```npm run start``` working in FE server 
   - Sets up a basic logic-free component and vanilla css based on the wireframe
 
-<img src="branch1-user-login.png" />
+![branch-1](./src/assets/branch1-user-login.png)
 
 - Documents changes and merges branch to main
 
+- Branch 2: policy-page 
+- Sets up component based on passing tests (elements render without crashing and with expected inputs)
+- Sets up data-free policy component and vanilla css based on the wireframe
