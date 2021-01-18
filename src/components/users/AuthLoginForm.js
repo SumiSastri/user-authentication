@@ -15,13 +15,13 @@ export default class AuthLoginForm extends Component {
 
 	submitForm = (event) => {
 		event.preventDefault();
-
 		axios
-			// .post('https://api.bybits.co.uk/auth/token', username, password)
+			// .post('https://api.bybits.co.uk/auth/token')
 			.post('	https://jsonplaceholder.okami101.io/users', this.state)
 			.then((response) => {
 				console.log('response', response);
 			})
+			// .then(() => this.props.history.push('/car-policy'))
 			.catch((err) => {
 				console.log('error ', err);
 			});

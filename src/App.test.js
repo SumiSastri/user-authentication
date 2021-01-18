@@ -11,12 +11,6 @@ describe('Tests for jest-testing app', () => {
 		ReactDOM.render(<App />, div);
 		ReactDOM.unmountComponentAtNode(div);
 	});
-	//  console.log(wrapper.debug())
-	test('renders the link for learn react testing with jest and enzyme', () => {
-		const { getByText } = render(<App />);
-		const linkElement = getByText('User Authentication - GitHub Repo');
-		expect(linkElement).toBeInTheDocument();
-	});
 	//   test("matches snapshot for App component", () =>{
 	//     const tree = renderer.create(<App/>).toJSON()
 	//     expect(tree).toMatchSnapshot();

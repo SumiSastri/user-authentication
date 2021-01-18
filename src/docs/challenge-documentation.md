@@ -6,9 +6,9 @@ The app has been scaffolded with the CRA (create-react-app) for speed and abilit
 
 - Jest and Enzyme
 
-__API-call-stubbing__
+## SPA routing - React-Router
 
-- No API tests as not in skill-set to test authenticated post requests
+Dependencies: ```npm install -D react-router react-router-dom```for the history object ```npm install history```
 
  ## Branching strategy
 

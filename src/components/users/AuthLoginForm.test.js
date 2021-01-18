@@ -12,7 +12,7 @@ const simulateOnChange = (wrapper, inputSelector, userInputUpdates) => {
 	return wrapper.find(inputSelector);
 };
 
-describe('tests for <AuthLoginForm />', () => {
+describe('tests for AuthLoginForm component', () => {
 	let wrapper;
 	beforeEach(() => {
 		wrapper = shallow(<AuthLoginForm />);
@@ -24,7 +24,7 @@ describe('tests for <AuthLoginForm />', () => {
 		ReactDOM.unmountComponentAtNode(div);
 	});
 
-	test('renders the title of the form component', () => {
+	test('renders the title of AuthLoginForm component', () => {
 		const wrapper = shallow(<AuthLoginForm />);
 		// console.log(wrapper.debug())
 		const text = wrapper.find('#h3-authuser').text();
@@ -46,7 +46,7 @@ describe('tests for <AuthLoginForm />', () => {
 		simulateOnChange(wrapper, '#authuserpassword', 'EbpucVzUP5cvsYha0E9i');
 	});
 
-	test('button event handler ', () => {
+	test('checks click function of the submit button', () => {
 		const wrapper = shallow(<AuthLoginForm />);
 		const submitButton = wrapper.find('#btn-authuserpayload');
 		submitButton.simulate('click');
