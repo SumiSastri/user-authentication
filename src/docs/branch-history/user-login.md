@@ -7,9 +7,10 @@
 
 ![branch-1](https://github.com/SumiSastri/user-authentication/blob/main/src/assets/branch1-user-login.png)
 
-- Documents changes and merges branch to main
+__Refactor 1__ Estimated time 4-hours Fibonnaci complexity 5
 
-**Branch 2: policy-page** Estimated time 3 hours Fibonnaci complexity 1
-- Sets up component based on passing tests (elements render without crashing and with expected inputs)
-- Sets up data-free component and vanilla css based on the wireframe
-![branch-2](https://github.com/SumiSastri/user-authentication/blob/main/src/assets/branch-2-policy-page.png)
+- Tests on change event handlers
+- Tests on submit event handler
+- Removes common button component (replaces with JSX button - abstraction of button overkill for this test)
+- Refactors tests for button component
+- Spins up FE server and tests working
