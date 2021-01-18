@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 const initialState = {
 	username: '',
@@ -14,7 +15,16 @@ export default class AuthLoginForm extends Component {
 
 	submitForm = (event) => {
 		event.preventDefault();
-		alert(`Your details have been submitted for registration`);
+
+		axios
+			// .post('https://api.bybits.co.uk/auth/token', username, password)
+			.post('	https://jsonplaceholder.okami101.io/users', this.state)
+			.then((response) => {
+				console.log('response', response);
+			})
+			.catch((err) => {
+				console.log('error ', err);
+			});
 	};
 
 	render() {

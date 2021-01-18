@@ -2,6 +2,18 @@
 
 The app has been scaffolded with the CRA (create-react-app) for speed and ability to transpile code into webpack-babel transpilers.
 
+## Testing frameworks
+
+- Jest and Enzyme
+
+__API-call-stubbing__
+
+```
+npm install whatwg-fetch fetch-mock node-fetch
+```
+
+Documentation fetch-mock[https://github.com/wheresrhys/fetch-mock]
+
  ## Branching strategy
 
  - Separate branches have been created for each task to chunk-debug code and push clean code into the repo.
