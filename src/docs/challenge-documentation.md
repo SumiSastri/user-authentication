@@ -12,12 +12,12 @@ The app has been scaffolded with the CRA (create-react-app) for speed and abilit
   - Sets up components based on passing tests ```App.js```, ```Button.js``` and ```AuthLoginForm```
   - Sets up a basic logic-free components and vanilla css based on the wireframe
   - Checks set up ```npm run start``` working in FE server 
-![branch-1](./assets/branch1-user-login.png)
+![branch-1](./src/assets/branch1-user-login.png)
 
 - Documents changes and merges branch to main
 
 **Branch 2: policy-page** Estimated time 3 hours Fibonnaci complexity 1
 - Sets up component based on passing tests (elements render without crashing and with expected inputs)
 - Sets up data-free component and vanilla css based on the wireframe
-![branch-3](./assets/branch2-policy-page.png)
+![branch-2](./src/assets/branch2-policy-page.png)
 
