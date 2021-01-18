@@ -1,5 +1,7 @@
 import './App.css';
+
 import AuthLoginForm from './components/users/AuthLoginForm';
+import CarPolicyPage from './components/policies/CarPolicyPage';
 
 function App() {
 	return (
@@ -14,8 +16,8 @@ function App() {
 					User Authentication - GitHub Repo
 				</a>
 			</header>
-
 			<AuthLoginForm />
+			<CarPolicyPage />
 		</div>
 	);
 }

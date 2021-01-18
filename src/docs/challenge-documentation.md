@@ -6,17 +6,18 @@ The app has been scaffolded with the CRA (create-react-app) for speed and abilit
 
  - Separate branches have been created for each task to chunk-debug code and push clean code into the repo.
 
- - Branch 1: user-login: Estimated time 8-hours (one-day) Fibonnaci complexity 3
+ **Branch 1: user-login** Estimated time 8-hours (one-day) Fibonnaci complexity 3
   - Sets up folder structure for separation of concerns and modularisation of the page-ui
-  - Sets up initial tests to ensure all components render correctly ```npm run tests```
-  - Sets up components based on passing tests
+  - Sets up initial tests to ensure all components render correctly ```npm run test```
+  - Sets up components based on passing tests ```App.js```, ```Button.js``` and ```AuthLoginForm```
+  - Sets up a basic logic-free components and vanilla css based on the wireframe
   - Checks set up ```npm run start``` working in FE server 
-  - Sets up a basic logic-free component and vanilla css based on the wireframe
-
-![branch-1](./src/assets/branch1-user-login.png)
+![branch-1](./assets/branch1-user-login.png)
 
 - Documents changes and merges branch to main
 
-- Branch 2: policy-page 
+**Branch 2: policy-page** Estimated time 3 hours Fibonnaci complexity 1
 - Sets up component based on passing tests (elements render without crashing and with expected inputs)
-- Sets up data-free policy component and vanilla css based on the wireframe
+- Sets up data-free component and vanilla css based on the wireframe
+![branch-3](./assets/branch2-policy-page.png)
+
