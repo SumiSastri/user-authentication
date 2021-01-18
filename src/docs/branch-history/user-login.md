@@ -14,4 +14,4 @@ __Refactor 1__ Estimated time 4-hours Fibonnaci complexity 5
 - Removes common button component (replaces with JSX button - abstraction of button overkill for this test)
 - Refactors tests for button component
 - Spins up FE server and tests working
-![branch-1/ refactor-1](https://github.com/SumiSastri/user-authentication/blob/user-login/src/assets/branch-2-policy-page.png)
+![branch-1/ refactor-1](https://github.com/SumiSastri/user-authentication/blob/main/src/assets/branch1-refactor1.png)
