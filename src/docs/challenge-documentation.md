@@ -20,6 +20,5 @@ The app has been scaffolded with the CRA (create-react-app) for speed and abilit
 **Branch 2: policy-page** Estimated time 3 hours Fibonnaci complexity 1
 - Sets up component based on passing tests (elements render without crashing and with expected inputs)
 - Sets up data-free component and vanilla css based on the wireframe
-<img src="/src/assets/branch2-policy-page.png" alt="Branch-2"
- width="150" height="100" />
+![branch-2](https://github.com/SumiSastri/user-authentication/blob/main/src/assets/branch-2-policy-page.png)
 
