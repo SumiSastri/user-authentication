@@ -15,3 +15,11 @@ __Refactor 1__ Estimated time 4-hours Fibonnaci complexity 5
 - Refactors tests for button component
 - Spins up FE server and tests working
 ![branch-1/ refactor-1](https://github.com/SumiSastri/user-authentication/blob/main/src/assets/branch1-refactor1.png)
+
+__Refactor 2__ Estimated time 4-hours Fibonnaci complexity 7
+
+- Adds payload of submit button to a post-Api
+- Tests worked on the mock api when actual api-called made to endpoint in challenge authentication failed with bad-request error
+- Tests were removed as not in skill-set to write tests for authenticated routes
+- Tested payload with console logs
+![branch-1/ refactor-1](https://github.com/SumiSastri/user-authentication/blob/main/src/assets/post-payload-onsubmit.png)
