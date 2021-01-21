@@ -1,34 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import { connect } from 'react-redux';
 
-const initialState = {
-	username: '',
-	password: ''
-};
+//move state and actions out of class component
+import { login } from '../users/auth-user-actions/AuthUserActions';
 
 export default class AuthLoginForm extends Component {
-	state = initialState;
-
-	handleChange = (stateKey) => (event) => {
-		this.setState({ [stateKey]: event.target.value });
-	};
-
-	submitForm = (event) => {
-		event.preventDefault();
-		axios
-			// .post('https://api.bybits.co.uk/auth/token')
-			.post('	https://jsonplaceholder.okami101.io/users', this.state)
-			.then((response) => {
-				console.log('response', response);
-			})
-			// .then(() => this.props.history.push('/car-policy'))
-			.catch((err) => {
-				console.log('error ', err);
-			});
-	};
-
 	render() {
-		const { username, password } = this.state;
+		const { username, password } = this.props.users;
+		console.log(`logs login props`, this.props.users);
 		return (
 			<form onSubmit={this.submitForm}>
 				<h3 id="h3-authuser">Sign In</h3>
@@ -70,3 +49,13 @@ export default class AuthLoginForm extends Component {
 		);
 	}
 }
+
+// state of this component now a prop so
+// mapped as a prop to the reducer?/store?
+
+// const mapStateToProps = (state) => ({
+// 	users: state.users
+// isAuthenticated: state.auth.isAuthenticated
+// });
+
+// export default connect(mapStateToProps, {login })(AuthLoginForm);

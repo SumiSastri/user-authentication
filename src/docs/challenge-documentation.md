@@ -17,5 +17,4 @@ Dependencies: ```npm install -D react-router react-router-dom```for the history 
  
  ## State-management strategy
 
- - React stateful component not hooks as the brief asks for a string-constant  ``` "type": "USER_PASSWORD_AUTH"``` the assumption is that state will need to be lifted into a Redux store
- - The progression of state will be tested in vanilla React and then moved to Redux due to skill-limitations in testing with Redux
+ - State will be lifted out of React components into Redux  as the brief requests a type with the payload   ``` "type": "USER_PASSWORD_AUTH"``` the assumption is that state will need to be lifted into a Redux store
