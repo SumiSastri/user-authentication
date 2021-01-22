@@ -1,4 +1,5 @@
 export const USER_PASSWORD_AUTH = 'USER_PASSWORD_AUTH';
+export const LOAD_USER = 'LOAD_USER';
 export const LOAD_AUTH_USER = 'LOAD_AUTH_USER';
 export const AUTH_FAIL = 'AUTH_FAIL';
 export const LOAD_AUTH_USER_POLICY = 'LOAD_AUTH_USER_POLICY';
