@@ -1,7 +1,5 @@
 // import axios from 'axios';
 
-// import { USER_PASSWORD_AUTH, LOAD_AUTH_USER, AUTH_FAIL } from './AuthUserActionTypes';
-
 import { LOAD_USER } from './AuthUserActionTypes';
 
 export const setUserLoading = () => {
@@ -10,7 +8,7 @@ export const setUserLoading = () => {
 	};
 };
 
-// // refactor change handler - json stringify response body
+// REFACTOR - MOVE UTILITY FUNCTIONS OUT OF COMPONENT STATE
 // // handleChange = (stateKey) => (event) => {
 // // 	this.setState({ [stateKey]: event.target.value });
 // // };

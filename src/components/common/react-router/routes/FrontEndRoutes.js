@@ -5,7 +5,7 @@ import history from './history';
 import HomePage from '../../HomePage';
 import NavBar from '../navs/NavBar';
 import CarPolicyPage from '../../../policies/CarPolicyPage';
-import AuthLoginForm from '../../../users/AuthLoginForm';
+import AuthLoginForm from '../../../users/auth-user-containers-components/AuthLoginForm';
 
 export class FrontEndRoutes extends Component {
 	render() {

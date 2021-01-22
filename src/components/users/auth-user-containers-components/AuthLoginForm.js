@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
 //move state and actions out of class component
-// import { login } from '../users/auth-user-actions/AuthUserActions';
+// import { login } from '';
 
 export default class AuthLoginForm extends Component {
 	render() {
