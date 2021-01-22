@@ -1,6 +1,7 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-import { LOAD_USER } from './AuthUserActionTypes';
+import { LOAD_USER, USER_PASSWORD_AUTH, USER_AUTH_FAIL } from './constants/AuthUserActionTypes';
+import { showErrors } from './AuthUserErrorsActions';
 
 export const setUserLoading = () => {
 	return {
@@ -8,57 +9,43 @@ export const setUserLoading = () => {
 	};
 };
 
-// REFACTOR - MOVE UTILITY FUNCTIONS OUT OF COMPONENT STATE
-// // handleChange = (stateKey) => (event) => {
-// // 	this.setState({ [stateKey]: event.target.value });
-// // };
+// Refactor: move utility functions out of component
 
-// //  Check token & load user
-// export const loadUser = () => (dispatch, getState) => {
-// 	// User loading
-// 	dispatch({ type: LOAD_AUTH_USER });
-// 	const url = 'https://api.bybits.co.uk/auth/token';
-// 	axios
-// 		.get(url, tokenConfig(getState))
-// 		.then((res) =>
-// 			dispatch({
-// 				type: LOAD_AUTH_USER,
-// 				payload: res.data
-// 			})
-// 		)
-// 		.catch((err) => {
-// 			dispatch(returnErrors(err.response.data, err.response.status));
-// 			dispatch({
-// 				type: AUTH_FAIL
-// 			});
-// 		});
-// };
+// Step 1: authenticate user USER_AUTH_PASSWORD
 
-// // refactor to an action-creator USER_AUTH_PASSWORD
-// // Login User
-// export const login = ({ username, password }) => (dispatch) => {
-// 	// Headers
-// 	const config = {
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		}
-// 	};
+export const loadAuthUser = () => (dispatch, getState) => {
+	dispatch({ type: USER_PASSWORD_AUTH });
+	//  Get auth token from state (in the authUserReducer) (:16)
+	//  Token comes back to the FE in local storage
+	const authToken = getState.authUserReducer.user.authToken;
 
-// 	// Request body
-// 	const body = JSON.stringify({ username, password });
-// 	const url = 'https://api.bybits.co.uk/auth/token';
-// 	axios
-// 		.post(url, body, config)
-// 		.then((res) =>
-// 			dispatch({
-// 				type: USER_PASSWORD_AUTH,
-// 				payload: res.data
-// 			})
-// 		)
-// 		.catch((err) => {
-// 			dispatch(returnErrors(err.response.data, err.response.status, 'USER_LOGIN_FAIL'));
-// 			dispatch({
-// 				type: AUTH_FAIL
-// 			});
-// 		});
-// };
+	//  Config  headers for authentication
+	const authTokenConfig = {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+	//  Find token and add to headers
+	if (authToken) {
+		authTokenConfig.headers['acess-code: 116567'] = authToken;
+	}
+	// make post call with the url end point/ payload params
+	const url = 'https://api.bybits.co.uk/auth/token';
+	// const body = JSON.stringify({ username, password });
+	axios
+		.get(url, authTokenConfig())
+		.then((res) =>
+			dispatch({
+				type: USER_PASSWORD_AUTH,
+				payload: res.data
+			})
+		)
+		.catch((err) => {
+			dispatch(showErrors(err.response.data, err.response.status));
+			dispatch({
+				type: USER_AUTH_FAIL
+			});
+		});
+};
+
+// Step 2: Load auth user into App home page for access to private routes (:21)

@@ -1,11 +1,12 @@
 // lift state out of component to reducer
-import { LOAD_USER } from '../auth-user-actions/AuthUserActionTypes';
+import { LOAD_USER, USER_PASSWORD_AUTH, USER_AUTH_FAIL } from '../auth-user-actions/constants/AuthUserActionTypes';
 
 const initialState = {
 	users: {
 		username: null,
-		isAuthenticated: null,
-		loading: false
+		isAuthenticated: false,
+		loading: false,
+		authToken: localStorage.getItem('authToken')
 	}
 };
 
@@ -17,6 +18,23 @@ export default function(state = initialState, action) {
 				...state,
 				loading: true
 			};
+		case USER_PASSWORD_AUTH:
+			return {
+				...state,
+				user: action.payload,
+				isAuthenticated: true,
+				loading: false
+			};
+		case USER_AUTH_FAIL:
+			localStorage.removeItem('authToken');
+			return {
+				...state,
+				authToken: null,
+				user: null,
+				isAuthenticated: false,
+				loading: false
+			};
+
 		default:
 			return state;
 	}

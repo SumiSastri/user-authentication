@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
-//move state and actions out of class component
-// import { login } from '';
+// move state and actions out of class component
+// import { login } from '../auth-user-actions/AuthUserActions';
 
 export default class AuthLoginForm extends Component {
+	// refactor to state as props of class component?
+	// handleChange = (stateKey) => (event) => {
+	// 	this.setState({ [stateKey]: event.target.value });
+	// };
+
+	// refactor to import action-creator as submit payload function
+	// handlesubmit = (event) => {
+	// event.preventDefault()
+	// };
+
 	render() {
 		const { username, password } = this.props.users;
 		console.log(`logs login props`, this.props.users);
@@ -51,7 +61,8 @@ export default class AuthLoginForm extends Component {
 }
 
 // state of this component now a prop so
-// mapped as a prop to the reducer?/store?
+// mapped as a prop to the reducer via the action type & payload
+// string constant and the function evaluated and connected in reducer
 
 // const mapStateToProps = (state) => ({
 // 	users: state.users

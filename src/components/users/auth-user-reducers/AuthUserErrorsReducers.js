@@ -1,4 +1,4 @@
-import { GET_ERRORS, CLEAR_ERRORS } from '../auth-user-actions/AuthUserActionTypes';
+import { GET_ERRORS, CLEAR_ERRORS } from '../auth-user-actions/constants/AuthUserActionTypes';
 
 const initialState = {
 	msg: {},
@@ -17,9 +17,7 @@ export default function(state = initialState, action) {
 			};
 		case CLEAR_ERRORS:
 			return {
-				msg: {},
-				status: null,
-				id: null
+				...state
 			};
 		default:
 			return state;
