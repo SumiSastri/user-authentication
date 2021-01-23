@@ -20,6 +20,7 @@ export default function(state = initialState, action) {
 				loading: true
 			};
 		case USER_PASSWORD_AUTH:
+			localStorage.setItem('authToken', action.payload.token);
 			return {
 				...state,
 				user: action.payload,

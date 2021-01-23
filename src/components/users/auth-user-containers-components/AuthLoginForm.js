@@ -1,23 +1,45 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 // move state and actions out of class component
-// import { login } from '../auth-user-actions/AuthUserActions';
+import { login } from '../auth-user-actions/AuthUserActions';
+import { clearErrors } from '../auth-user-actions/AuthUserErrorsActions';
 
-export default class AuthLoginForm extends Component {
-	// refactor to state as props of class component?
-	// handleChange = (stateKey) => (event) => {
-	// 	this.setState({ [stateKey]: event.target.value });
-	// };
+// specific
+class AuthLoginForm extends Component {
+	state = {
+		username: '',
+		password: ''
+	};
+
+	componentDidUpdate(previousProps) {
+		const { error } = this.props;
+		if (error !== previousProps.error) {
+			if (error.id === 'USER_AUTH_FAIL') {
+				this.setState({ msg: error.msg.msg });
+			} else {
+				this.setState({ msg: null });
+			}
+		}
+	}
+	handleChange = (stateKey) => (event) => {
+		this.setState({ [stateKey]: event.target.value });
+	};
 
 	// refactor to import action-creator as submit payload function
-	// handlesubmit = (event) => {
-	// event.preventDefault()
-	// };
+	submitForm = (event) => {
+		event.preventDefault();
+		const { username, password } = this.state;
+		const user = {
+			username,
+			password
+		};
+		this.props.login(user);
+	};
 
 	render() {
-		const { username, password } = this.props.users;
-		console.log(`logs login props`, this.props.users);
+		const { username, password } = this.state;
+		// console.log(`logs login props`, this.props.users);
 		return (
 			<form onSubmit={this.submitForm}>
 				<h3 id="h3-authuser">Sign In</h3>
@@ -60,13 +82,8 @@ export default class AuthLoginForm extends Component {
 	}
 }
 
-// state of this component now a prop so
-// mapped as a prop to the reducer via the action type & payload
-// string constant and the function evaluated and connected in reducer
+const mapStateToProps = (state) => ({
+	users: state.users
+});
 
-// const mapStateToProps = (state) => ({
-// 	users: state.users
-// isAuthenticated: state.auth.isAuthenticated
-// });
-
-// export default connect(mapStateToProps, {login })(AuthLoginForm);
+export default connect(mapStateToProps, { login, clearErrors })(AuthLoginForm);
