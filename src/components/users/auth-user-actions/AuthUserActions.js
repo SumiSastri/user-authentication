@@ -22,16 +22,18 @@ export const loadAuthUser = () => (dispatch, getState) => {
 	//  Config  headers for authentication
 	const authTokenConfig = {
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
+			environment: 'mock'
 		}
 	};
 	//  Find token and add to headers
+	//  back end code Authorization: Bearer {access_token}
 	if (authToken) {
-		authTokenConfig.headers['acess-code: 116567'] = authToken;
+		authTokenConfig.headers['116567'] = authToken;
 	}
 	// make post call with the url end point/ payload params
 	const url = 'https://api.bybits.co.uk/auth/token';
-	// const body = JSON.stringify({ username, password });
+	// const body = JSON.stringify({ username, password }); when you get the response
 	axios
 		.get(url, authTokenConfig())
 		.then((res) =>
@@ -41,6 +43,7 @@ export const loadAuthUser = () => (dispatch, getState) => {
 			})
 		)
 		.catch((err) => {
+			// call the showErrors function here
 			dispatch(showErrors(err.response.data, err.response.status));
 			dispatch({
 				type: USER_AUTH_FAIL
@@ -48,4 +51,6 @@ export const loadAuthUser = () => (dispatch, getState) => {
 		});
 };
 
-// Step 2: Load auth user into App home page for access to private routes (:21)
+// Step 2: Load auth user into App home page for access to private routes (:25)
+
+// Step 3: Refactor for auth

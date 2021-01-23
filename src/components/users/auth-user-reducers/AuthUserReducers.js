@@ -1,6 +1,7 @@
 // lift state out of component to reducer
 import { LOAD_USER, USER_PASSWORD_AUTH, USER_AUTH_FAIL } from '../auth-user-actions/constants/AuthUserActionTypes';
 
+// Authorization: Bearer {access_token}
 const initialState = {
 	users: {
 		username: null,
