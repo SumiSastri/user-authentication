@@ -39,7 +39,6 @@ class AuthLoginForm extends Component {
 
 	render() {
 		const { username, password } = this.state;
-		// console.log(`logs login props`, this.props.users);
 		return (
 			<form onSubmit={this.submitForm}>
 				<h3 id="h3-authuser">Sign In</h3>
