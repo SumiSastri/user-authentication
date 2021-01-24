@@ -32,6 +32,7 @@ export const authTokenConfig = (getState) => {
 // Step 2: Make get call with the url end point
 // get the token back to match login-details and authorise user
 // action type and action payload
+// load auth user
 export const loadAuthUser = () => (dispatch, getState) => {
 	dispatch({ type: USER_PASSWORD_AUTH });
 	const url = 'https://api.bybits.co.uk/policys/details';

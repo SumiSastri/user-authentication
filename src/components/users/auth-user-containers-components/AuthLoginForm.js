@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // move state and actions out of class component
 import { login } from '../auth-user-actions/AuthUserActions';
 import { clearErrors } from '../auth-user-actions/AuthUserErrorsActions';
-
+import history from '../../common/react-router/routes/history';
 // specific
 class AuthLoginForm extends Component {
 	state = {
@@ -35,10 +35,12 @@ class AuthLoginForm extends Component {
 			password
 		};
 		this.props.login(user);
+		history.push('/car-policy');
 	};
 
 	render() {
-		const { username, password } = this.state;
+		const { username, password } = this.props;
+		console.log(this.props);
 		return (
 			<form onSubmit={this.submitForm}>
 				<h3 id="h3-authuser">Sign In</h3>

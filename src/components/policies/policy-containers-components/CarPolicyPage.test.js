@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 
-import CarPolicyPage from './CarPolicyPage';
+import CarPolicyPage from '../policy-containers-components/car-policy-pages/CarPolicyPage';
 
 describe('Tests for the CarPolicyPage component', () => {
 	test('renders CarPolicyPage component without crashing', () => {
