@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// move state and actions out of class component
+// move state and utility functions out of class component
 import { login } from '../auth-user-actions/AuthUserActions';
 import { clearErrors } from '../auth-user-actions/AuthUserErrorsActions';
 import history from '../../common/react-router/routes/history';
-// specific
+
+// import utility functions back from action creators
+// map these action creators as props to state
+// actions dispatched to reducer where state is updated
 class AuthLoginForm extends Component {
 	state = {
 		username: '',

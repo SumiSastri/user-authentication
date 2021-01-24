@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import store from '../src/client-side-data/redux-store/store';
 // Routing
 import FrontEndRoutes from './components/common/react-router/routes/FrontEndRoutes';
-// Authentication - allow auth users into app - called everytime on component mounting
+// Authentication - runs constantly on component mounting
+// used in pages to identify private/auth pages vs public routes
 import { loadAuthUser } from '../src/components/users/auth-user-actions/AuthUserActions';
 
 class App extends Component {

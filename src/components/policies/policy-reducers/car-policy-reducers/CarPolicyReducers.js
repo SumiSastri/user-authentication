@@ -5,10 +5,22 @@ import { LOAD_CAR_POLICY_ITEMS } from '../../policy-actions/policy-constants/Car
 const initialState = {
 	carPolicy: {
 		loading: false,
-		carPolicyReference: null,
-		carPolicyCoverType: null,
-		carPolicyHolderAddress: null,
-		carPolicyCarMakeModel: null
+		isAuthenticated: true,
+		policy_ref: '123',
+		cover: '',
+		address: {
+			line_1: ' ',
+			line_2: ' ',
+			line_3: ' ',
+			county: ' ',
+			city: ' ',
+			country: ' ',
+			postcode: ' '
+		},
+		vehicle: {
+			make: ' ',
+			model: ' '
+		}
 	}
 };
 
