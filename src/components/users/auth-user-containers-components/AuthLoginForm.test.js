@@ -11,7 +11,6 @@ const simulateOnChange = (wrapper, inputSelector, userInputUpdates) => {
 	});
 	return wrapper.find(inputSelector);
 };
-
 describe('tests for AuthLoginForm component', () => {
 	let wrapper;
 	beforeEach(() => {
@@ -23,14 +22,12 @@ describe('tests for AuthLoginForm component', () => {
 		ReactDOM.render(<AuthLoginForm />, div);
 		ReactDOM.unmountComponentAtNode(div);
 	});
-
 	test('renders the title of AuthLoginForm component', () => {
 		const wrapper = shallow(<AuthLoginForm />);
 		// console.log(wrapper.debug())
 		const text = wrapper.find('#h3-authuser').text();
 		expect(text).toBe('Sign In');
 	});
-
 	test('renders empty form text inputs', () => {
 		const wrapper = shallow(<AuthLoginForm />);
 		const name = wrapper.find('#authuserlogin').text();

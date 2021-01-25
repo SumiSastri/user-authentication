@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// move state and utility functions out of class component
 import { login } from '../auth-user-actions/AuthUserActions';
 import { clearErrors } from '../auth-user-actions/AuthUserErrorsActions';
 import history from '../../common/react-router/routes/history';
 
-// import utility functions back from action creators
-// map these action creators as props to state
-// actions dispatched to reducer where state is updated
 class AuthLoginForm extends Component {
 	state = {
 		username: '',
 		password: ''
 	};
-
 	componentDidUpdate(previousProps) {
 		const { error } = this.props;
 		if (error !== previousProps.error) {
@@ -28,8 +23,6 @@ class AuthLoginForm extends Component {
 	handleChange = (stateKey) => (event) => {
 		this.setState({ [stateKey]: event.target.value });
 	};
-
-	// refactor to import action-creator as submit payload function
 	submitForm = (event) => {
 		event.preventDefault();
 		const { username, password } = this.state;
@@ -40,10 +33,8 @@ class AuthLoginForm extends Component {
 		this.props.login(user);
 		history.push('/car-policy');
 	};
-
 	render() {
-		const { username, password } = this.props;
-		console.log(this.props);
+		const { username, password } = this.state;
 		return (
 			<form onSubmit={this.submitForm}>
 				<h3 id="h3-authuser">Sign In</h3>
@@ -57,7 +48,7 @@ class AuthLoginForm extends Component {
 					value={username}
 					onChange={this.handleChange('username')}
 				/>
-				<p>{username}</p>
+				{/*  */}
 				<br />
 				<label>Password</label>
 				<input
@@ -70,7 +61,7 @@ class AuthLoginForm extends Component {
 					value={password}
 					onChange={this.handleChange('password')}
 				/>
-				<p>{password}</p>
+				{/* <p>{password}</p> */}
 				<br />
 				<button
 					name="btn-submit"
@@ -85,9 +76,7 @@ class AuthLoginForm extends Component {
 		);
 	}
 }
-
 const mapStateToProps = (state) => ({
 	users: state.users
 });
-
 export default connect(mapStateToProps, { login, clearErrors })(AuthLoginForm);

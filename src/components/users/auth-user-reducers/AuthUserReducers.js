@@ -1,4 +1,3 @@
-// lift state out of component to reducer
 import {
 	LOAD_USER,
 	LOAD_AUTH_USER,
@@ -6,13 +5,12 @@ import {
 	USER_PASSWORD_AUTH_FAIL
 } from '../auth-user-actions/constants/AuthUserActionTypes';
 
-// Authorization: Bearer {access_token}
 const initialState = {
 	users: {
 		username: null,
 		isAuthenticated: false,
 		loading: false,
-		authToken: localStorage.getItem('authToken')
+		access_token: localStorage.getItem('access_token')
 	}
 };
 
@@ -42,12 +40,12 @@ export default function(state = initialState, action) {
 				user: action.payload
 			};
 		case USER_PASSWORD_AUTH_FAIL:
-			localStorage.removeItem('authToken');
+			localStorage.removeItem('access_token');
 			return {
 				...state,
 				loading: false,
 				isAuthenticated: false,
-				authToken: null,
+				access_token: null,
 				user: null
 			};
 		default:

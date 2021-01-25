@@ -9,7 +9,6 @@ describe('Tests for the CarPolicyPage component', () => {
 		ReactDOM.render(<CarPolicyPage />, div);
 		ReactDOM.unmountComponentAtNode(div);
 	});
-
 	test('renders the title of the page', () => {
 		const wrapper = shallow(<CarPolicyPage />);
 		// console.log(wrapper.debug())

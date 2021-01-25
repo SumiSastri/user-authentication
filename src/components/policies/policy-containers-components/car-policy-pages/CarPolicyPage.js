@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getCarPolicyItems } from '../../policy-actions/car-policy-actions/CarPolicyActions';
-// move state out into the reducer
-// move utility functions to action creators
-// import action creator back into component and connect to store
+
 class CarPolicyPage extends Component {
 	state = {
 		carPolicy: {
-			loading: false,
-			isAuthenticated: true,
 			policy_ref: '',
 			cover: '',
 			address: {
@@ -25,7 +21,9 @@ class CarPolicyPage extends Component {
 				make: ' ',
 				model: ' '
 			}
-		}
+		},
+		loading: false,
+		isAuthenticated: true
 	};
 	handleChange = (stateKey) => (event) => {
 		this.setState({ [stateKey]: event.target.value });
@@ -93,9 +91,9 @@ class CarPolicyPage extends Component {
 		);
 	}
 }
-
 const mapStateToProps = (state) => ({
-	carPolicy: state.carPolicy
+	carPolicy: state.carPolicy,
+	loading: state.loading,
+	isAuthenticated: state.isAuthenticated
 });
 export default connect(mapStateToProps, { getCarPolicyItems })(CarPolicyPage);
-// export default CarPolicyPage;

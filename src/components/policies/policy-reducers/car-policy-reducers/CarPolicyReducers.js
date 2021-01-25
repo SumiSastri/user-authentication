@@ -1,11 +1,10 @@
-// lift state out of component to reducer
-import { LOAD_CAR_POLICY_ITEMS } from '../../policy-actions/policy-constants/CarPolicyActionTypes';
+import {
+	LOAD_CAR_POLICY_ITEMS,
+	GET_CAR_POLICY_ITEMS
+} from '../../policy-actions/policy-constants/CarPolicyActionTypes';
 
-// Authorization: Bearer {access_token}
 const initialState = {
 	carPolicy: {
-		loading: false,
-		isAuthenticated: true,
 		policy_ref: '123',
 		cover: '',
 		address: {
@@ -21,15 +20,25 @@ const initialState = {
 			make: ' ',
 			model: ' '
 		}
-	}
+	},
+	loading: false,
+	isAuthenticated: true
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function(state = initialState, action) {
 	switch (action.type) {
+		case GET_CAR_POLICY_ITEMS:
+			return {
+				...state,
+				carPolicy: action.payload,
+				loading: false,
+				isAuthenticated: true
+			};
 		case LOAD_CAR_POLICY_ITEMS:
 			return {
 				...state,
+
 				loading: true
 			};
 		default:

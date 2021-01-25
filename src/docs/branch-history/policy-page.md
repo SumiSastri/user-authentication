@@ -15,6 +15,8 @@ curl --request GET --url https://api.bybits.co.uk/policys/details --header "envi
 - Sets up history object and tests the path from login submit to policy page works
 - Connects pages to the store
 - Redux-connection working
+[branch-2 Redux connection working]()
+
 - Tests render from authorisation headers
 
 - Unable to unscramble auth code access via react-redux curl result stored in (src/client-side-data/mocks/policy.json)

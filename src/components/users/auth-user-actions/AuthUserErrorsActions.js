@@ -6,7 +6,6 @@ export const showErrors = (msg, status, id) => {
 		payload: { msg, status, id }
 	};
 };
-
 export const clearErrors = () => {
 	return {
 		type: CLEAR_ERRORS

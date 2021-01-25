@@ -9,10 +9,6 @@ import CarPolicyPage from '../../../policies/policy-containers-components/car-po
 import AuthLoginForm from '../../../users/auth-user-containers-components/AuthLoginForm';
 
 export class FrontEndRoutes extends Component {
-	state = {
-		username: '',
-		isAuthenticated: false
-	};
 	render() {
 		return (
 			<div>
@@ -30,12 +26,8 @@ export class FrontEndRoutes extends Component {
 		);
 	}
 }
-
-// export default FrontEndRoutes;
-
-// get user authorisation state from the users auth reducer state
 const mapStateToProps = (state) => ({
-	users: state.users
+	users: state.users,
+	carPolicy: state.carPolicy
 });
-
 export default connect(mapStateToProps, null)(FrontEndRoutes);

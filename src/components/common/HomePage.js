@@ -1,4 +1,4 @@
-const HomePage = (props) => {
+const HomePage = () => {
 	return (
 		<div>
 			<h4 id="home">User Authentication</h4>
